@@ -1,0 +1,55 @@
+package by.unlimit;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+//import javax.servlet.annotation.WebServlet;
+//import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+//@WebServlet("/MyServlet")
+public class MyServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Info");
+		String name = request.getParameter("firstName");
+		String surname = request.getParameter("secondName");
+		System.out.println(name + " " + surname);
+		
+		
+		
+		//response.setContentType("text/html");
+		//response.setCharacterEncoding("UTF-8");
+		
+		response.setContentType("text/html;charset=utf-8");
+		
+		PrintWriter printWriter = response.getWriter();
+		printWriter.println("<h3>Уважаемый " + name + " " + surname + "!" + " Ваша заявка пока что ни..уя не будет рассмотрена, т.к. это тестовый текст!:)"+"</h3>");
+		printWriter.close();
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		System.out.println("Info");
+		String name = request.getParameter("firstName");
+		String surname = request.getParameter("secondName");
+		System.out.println(name + " " + surname);
+		
+		
+		
+		//response.setContentType("text/html");
+		//response.setCharacterEncoding("UTF-8");
+		
+		response.setContentType("text/html;charset=utf-8");
+		
+		PrintWriter printWriter = response.getWriter();
+		printWriter.println("<h3>Surprise, Post! Шашлык у Ашота! Заходи, дорогой "+name+" "+surname+"!!!"+" Хостом будэш!!"+"</h3>");
+		printWriter.close();
+	} 
+
+}

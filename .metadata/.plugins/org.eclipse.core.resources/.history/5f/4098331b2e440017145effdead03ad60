@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MAKARONI SMA4NI</title>
+</head>
+<body>
+ОИВК ВЕЩАЕТ!!!!!
+	<form method="POST" action="MyServlet">
+	Имя<input type="text" name="firstName">
+	Фамилия<input type="text" name="secondName">
+	Отдел<input type="text" name="department">
+	<p>Электронное обращение<Br>
+   <textarea name="comment" cols="100" rows="10"></textarea></p>
+	<input type="submit" value="Отправить">
+	</form>
+</body>
+</html>
