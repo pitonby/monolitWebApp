@@ -1,0 +1,113 @@
+package domain;
+
+import java.util.Date;
+
+public class Application {
+	
+	private String firstName, 
+	               secondName, 
+	               department, 
+	               id_number, 
+	               pc_number, 
+	               text;
+	
+	private Date startTime, endTime;
+	private String flag;
+	
+	Flags enumFlag; 
+	
+	public Application(String firstName, String secondName, String department, String id_number, String pc_number, String text, 
+			           Date startTime, Date endTime, String flag){
+		
+		this.firstName = firstName;
+		this.secondName = secondName;
+		this.department = department;
+		this.id_number = id_number;
+		this.pc_number = pc_number;
+		this.text = text;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		enumFlag = Flags.valueOf(flag);
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getSecondName() {
+		return secondName;
+	}
+
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public String getId_number() {
+		return id_number;
+	}
+
+	public void setId_number(String id_number) {
+		this.id_number = id_number;
+	}
+
+	public String getPc_number() {
+		return pc_number;
+	}
+
+	public void setPc_number(String pc_number) {
+		this.pc_number = pc_number;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public Date getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
+
+	public Flags getEnumFlag() {
+		return enumFlag;
+	}
+
+	public void setEnumFlag(String enumFlag) {
+		this.enumFlag = Flags.valueOf(enumFlag);
+	}
+
+}

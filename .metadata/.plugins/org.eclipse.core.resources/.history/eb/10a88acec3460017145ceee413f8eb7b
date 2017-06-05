@@ -1,0 +1,9 @@
+package domain;
+
+public enum Flags {
+	
+	NEW,
+	IN_PROGRESS,
+	ENDING;
+
+}

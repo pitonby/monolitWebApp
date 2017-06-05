@@ -1,0 +1,75 @@
+package connector;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class ConnectorDB {
+	
+	 // JDBC URL, username and password of MySQL server
+    private static final String url = "jdbc:mysql://localhost:3333/monolit";
+    private static final String user = "root";
+    private static final String password = "masterkey";
+ 
+    // JDBC variables for opening and managing connection
+    private static Connection connection;
+    private static Statement statement;
+    private static ResultSet resultSet;
+ 
+    public static Connection getConnection() {
+		return connection;
+	}
+
+	public static void setConnection(Connection connection) {
+		ConnectorDB.connection = connection;
+	}
+
+	public static Statement getStatement() {
+		return statement;
+	}
+
+	public static void setStatement(Statement statement) {
+		ConnectorDB.statement = statement;
+	}
+
+	public static ResultSet getResultSet() {
+		return resultSet;
+	}
+
+	public static void setResultSet(ResultSet resultSet) {
+		ConnectorDB.resultSet = resultSet;
+	}
+
+	public static void main(String args[]) {
+        String query = "select * from apps";
+ 
+        try {
+            // opening database connection to MySQL server
+            connection = DriverManager.getConnection(url, user, password);
+ 
+            // getting Statement object to execute query
+            statement = connection.createStatement();
+ 
+            // executing SELECT query
+            resultSet = statement.executeQuery(query);
+ 
+            while (resultSet.next()) {
+                int count = resultSet.getInt(1);
+                System.out.println("Total number of books in the table : " + count);
+            }
+ 
+        } catch (SQLException sqlEx) {
+            sqlEx.printStackTrace();
+        } finally {
+            //close connection ,stmt and resultset here
+            try { con.close(); } catch(SQLException se) { /*can't do anything */ }
+            try { stmt.close(); } catch(SQLException se) { /*can't do anything */ }
+            try { rs.close(); } catch(SQLException se) { /*can't do anything */ }
+        }
+    }
+ 
+}
+
+
