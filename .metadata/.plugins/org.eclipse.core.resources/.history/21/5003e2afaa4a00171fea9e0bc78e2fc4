@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Результат обработки обращения</title>
+</head>
+<body>
+	<h1>
+           <% 
+        String name = request.getParameter("firstName");
+   		String surname = request.getParameter("secondName");
+   		String department = request.getParameter("department");
+   		String id_number = request.getParameter("id_number");
+   		String pc_number = request.getParameter("pc_number");
+   		String text = request.getParameter("text");
+        if (name == null || name.length() == 0) {
+            %>
+            Не заполнена графа "Имя"
+            <%            } 
+        else if(surname == null || name.length() == 0){
+            %>
+            Не заполнена графа "Фамилия"
+            <%}
+        else if(department == null || name.length() == 0){
+            %>
+            Не заполнена графа "Отдел"
+            <% }            
+        else if(id_number == null || name.length() == 0){
+            %>
+            Не заполнена графа "Табельный номер"
+            <% }            
+        else if(pc_number == null || name.length() == 0){
+            %>
+            Не заполнена графа "Инвентарный номер компьютера"
+            <% } 
+        else if(text == null || name.length() == 0){
+            %>
+            Не заполнена графа "Электронное обращение"
+        <% } else{ %>
+        	Ваше обращение отправлено!
+        <% }%>
+            
+   </h1>
+   
+   <br><%=name%><br>
+       <%=surname%><br>
+       <%=department%><br>
+       <%=id_number%><br>
+       <%=pc_number%><br>
+       <%=text%>         
+</body>
+</html>
